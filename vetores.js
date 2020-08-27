@@ -77,4 +77,16 @@ for(let fruta of vetor1){
     console.log(fruta)
 }
 
+// Forma 3: forEach()
+// O argumento do foreach() é uma função que recebe 
+// cada elemento do vetor para fazer algo com ele
+
+// Argumento com arrow function 
+vetor1.forEach(fruta => console.log(fruta))
+
+// Argumento como função tradicional
+vetor1.forEach(function(fruta) {
+    console.log(fruta)
+})
+
 
