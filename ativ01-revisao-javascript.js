@@ -18,10 +18,10 @@
 let estadosNe = []
 
 let estado1 = {
-   nome: 'Sergipe',
-   sigla: 'SE',
-   area: 21915.08,
-   populacao: 2278308
+    nome: 'Sergipe',
+    sigla: 'SE',
+    area: 21915.08,
+    populacao: 2278308
 }
 
 estadosNe.push(estado1)
@@ -49,7 +49,7 @@ let estado3 = {
 
 estadosNe.push(estado3)
 
-let estado4  = {
+let estado4 = {
     nome: 'Paraíba',
     sigla: 'PB',
     area: 56469.78,
@@ -107,7 +107,8 @@ let estado9 = {
       segunda pela primeira. 
 */
 
-estadi["Densidade demográfica"] = (estado1.populacao, estado1.area) => 
+let densidadeDemografica = (area, populacao) => populacao / area
+
 
 /*
    3) Percorra o vetor estadosNe usando um for tradicional. Para cada estado,
@@ -117,18 +118,36 @@ estadi["Densidade demográfica"] = (estado1.populacao, estado1.area) =>
 
       Durante este mesmo loop, elimine a propriedade 'sigla' dos objetos.
 
+      
+
 */
+
+for (let i = 0; i < estadosNe.length; i++) {
+    estadosNe[i]['Densidade demográfica'] = densidadeDemografica(estadosNe[i].area, estadosNe[i].populacao)
+    delete estadosNe[i].sigla
+}
 
 /* 4) Escreva uma arrow function que receba um objeto. Na função, use for..in
       para extrair as propriedades e seus valores e exibi-los com console.log().
 
 */
 
+let nordeste = (estadosNe) => {
+    for (i in estadosNe) {
+        console.log(nordeste)
+    }
+}
+
 /* 5) Percorra o vetor estadosNe usando for..of. Para cada objeto no vetor,
       invoque a função escrita em 4) para exibi-lo.
 
-/*
-   6)
+*/
+
+for (let nordeste of estadosNe) {
+    console.log(nordeste)
+}
+
+   /*6)
       a) Declare um vetor vazio.
       b) Insira no vetor criado no item a) apenas o nome de cada Estado, conforme
          os dados no topo deste arquivo, um de cada vez. Faça as inserções de 
@@ -140,4 +159,17 @@ estadi["Densidade demográfica"] = (estado1.populacao, estado1.area) =>
 
 */
 
-console.log(estadosNe[nome])
+let vetor  = []
+
+vetor.push(estado1.nome); // Último
+vetor.unshift(estado2.nome); // Primeiro
+vetor.splice(7,0,estado3.nome); // Oitavo 7,0
+vetor.splice(4,0,estado4.nome); // Quinto 4,0
+vetor.splice(5,0,estado5.nome); // Sexto 5,0
+vetor.splice(2,0,estado6.nome); // Terceiro 2,0
+vetor.splice(6,0,estado7.nome); // Sétimo 6,0
+vetor.splice(3,0,estado8.nome); // Quarto 3,0
+vetor.splice(1,0,estado9.nome); // Segundo 1,0
+
+console.log(vetor)
+
